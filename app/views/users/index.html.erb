@@ -15,7 +15,7 @@
 <div>
   <%= attachment_image_tag user, :profile_image, :fill, 60, 60, format: 'jpeg', fallback: "no_image.jpg" %>
   <span><%= user.name %></span>
-  <span><%= link_to "show" , user_path %></span>
+  <span><%= link_to "show" , user_path(@user.id) %></span>
 
 </div>
 <% end %>
