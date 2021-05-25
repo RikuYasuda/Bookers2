@@ -9,11 +9,8 @@
 <body>
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="navbar-brand">
-        <%= link_to "Bookers", root_path, class: 'text-light' %>
-      </div>
-
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <div class="container">
+        <a class="navbar-brand" href="/"><span>Bookers</span></a>
           <ul class="navbar-nav ml-auto">
             <% if user_signed_in? %>
               <li>
@@ -21,15 +18,15 @@
                   <% end %>
               </li>
               <li>
-                <%= link_to users_path, class: 'nav-link fas fa-home nav-link text-light' do %> Users
+                <%= link_to users_path, class: 'nav-link fas fa-users nav-link text-light' do %> Users
                   <% end %>
               </li>
               <li>
-                <%= link_to books_path, class: 'nav-link fas fa-home nav-link text-light' do %> books
+                <%= link_to books_path, class: 'nav-link fas fa-book-open nav-link text-light' do %> books
                   <% end %>
               </li>
               <li>
-                <%= link_to destroy_user_session_path, method: :delete, class: 'nav-link fas fa-home nav-link text-light' do %> logout
+                <%= link_to destroy_user_session_path, method: :delete, class: 'nav-link fas fa-sign-out-alt nav-link text-light' do %> logout
                   <% end %>
               </li>
             <% else %>
@@ -38,21 +35,21 @@
                   <% end %>
               </li>
               <li>
-                <%= link_to homes_show_path, class: 'nav-link text-white fas fa-home nav-link text-light' do %> About
+                <%= link_to home_about_path, class: 'nav-link text-white fas fa-link nav-link text-light' do %> About
                   <% end %>
               </li>
               <li>
-                <%= link_to new_user_registration_path, class: 'nav-link text-white fas fa-home nav-link text-light' do %> sign up
+                <%= link_to new_user_registration_path, class: 'nav-link text-white fas fa-user-plus nav-link text-light' do %> sign up
                   <% end %>
               </li>
               <li>
-                <%= link_to new_user_session_path, class: 'nav-link text-white fas fa-home nav-link text-light' do %> login
+                <%= link_to new_user_session_path, class: 'nav-link text-white fas fa-sign-in-alt nav-link text-light' do %> login
                   <% end %>
               </li>
               <% end %>
           </ul>
         </div>
-
+      </div>
     </nav>
   </header>
   <main>

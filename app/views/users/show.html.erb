@@ -1,5 +1,10 @@
 <body>
   <main>
+    <% if flash[:notice] %>
+      <p id="notice">
+        <%= flash[:notice] %>
+      </p>
+    <% end %>
     <div class="container px-5 px-sm-0">
       <div class="row">
         <div class="col-md-3">
@@ -21,8 +26,8 @@
                 <tbody>
                   <tr>
                     <td>
-                      <%= link_to user_path(@user.id) do %>
-                      <% attachment_image_tag @user, :profile_image, :fill, 60, 60, format: 'jpeg', fallback: "no_image.jpg" %>
+                      <%= link_to user_path(book.user_id) do %>
+                      <%= attachment_image_tag book.user, :profile_image, :fill, 60, 60, format: 'jpeg', fallback: "no_image.jpg" %>
                       <% end %>
                     <td>
                       <%= link_to book.title , book_path(book.id) %>
