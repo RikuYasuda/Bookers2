@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resource :relationships, only: [:create, :destroy]
   get 'followings/:id' => 'relationships#followings', as: 'followings'
   get 'followers/:id' => 'relationships#followers', as: 'followers'
+  get '/search', to: 'searchs#search'
 
   resources :books do
     resource :favorites, only: [:create,:destroy]
